@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+    //  1 -  it is required to get the first nth first elements at fobinacci series ..where
+    // fobinacci series:- is seres in which each number is the sum of the preceding ones and first two numbers are 0,1 
+
+    // fob=[0,1,1,2,3,5,8,..]
+    // [0,1,1,2,3,5,8,..] =[0,1, fob[0]+fob[1] , fob[1]+fob[2] , fob[2]+fob[3],...] 
+    // =[0,1,fob[i]=fob[i-2]+fob[i-1]]
+        //fn=fn-1 + fn-2
+        function fobinacci(n) {
+            if(n<2){
+                return n
+            }
+            let fob=[0,1];
+                for (let i=2 ; i<n ; i++) {       // we need to get fob array which  fob[i]=fob[i-2]+fob[i-1] from i=2 to i=n-1 
+                    fob[i]=fob[i-2]+fob[i-1]     // Big-O = o(n)
+                }
+            return fob
+        }
+        console.log(fobinacci(3))
+        
+
+
+        //  2 - 
+        // factorial number
+
+        // 4! = 4 * 3 * 2 * 1
+        // n! = n * (n-1) * (n-2) * ... (n-i=1)  
+        function factorial(n) {
+            let result=1;
+            for(let i=2 ; i<=n ; i++){               //  we need to get the result of product from i=2 to i=n
+                result=result*i;
+            }
+            return result;
+        }
+        console.log('________________');
+        console.log('factorial number');
+        console.log(`0! = ${factorial(0)}`) ;  // 1
+        console.log(`1! = ${factorial(1)}`) ;  // 1 
+        console.log(`2! = ${factorial(2)}`) ;  // 1 
+
+        console.log(`3! = ${factorial(3)}`) ;   // 6 
+        console.log(`4! =${factorial(4)}`) ;     // 24
+        console.log(`5! =${factorial(5)}`) ;    // 120
+
+
+
+
+        //  3-
+        // prime number  :- are numbers which be divisible only by themselves and 1 and greater than 1. 
+        let isPrime =function (n){
+            let smallerIntegerNumbers= [2,3,4,5,6,7,8,9];
+            if(n<2){
+                return false;
+            }
+            for(let i=0 ; n>smallerIntegerNumbers[i] ; i++){
+                if(n % smallerIntegerNumbers[i] ===0){
+                    return false;
+                }
+            }
+           return true;
+        }
+
+        console.log('________________');
+        console.log(`1  ${isPrime(1)}`);                    // false  
+        console.log(`2  ${isPrime(2)}`);                    //  true
+        console.log(`3  ${isPrime(3)}`);                    //  true
+        console.log(`4  ${isPrime(4)}`);                    // false   
+        console.log(`5  ${isPrime(5)}`);                    // true   
+        console.log(`6  ${isPrime(6)}`);                    // false   
+        console.log(`7  ${isPrime(7)}`);                    // true   
+        console.log(`97 ${isPrime(97)}`);                    //  true   for(let i=0 ; 97>undefined = NAN  =false ; i++){ 
+        console.log(`100 ${isPrime(100)}`);                    //  false
+
+
+console.log(10<NaN)
+
+        
+        //  4-
+        //Power of two :- given 'n' is positive integer number  determine is n is a power of two or not ?
+        // power of two means  number of the form 2^i=n where i is an integer,
+        // the result of exponentiation with number two as the base and integer i as the exponent .
+        //for example 
+        // 8 is power of two???   8/2 =4 remainder 0,  4/2=2  remainder 0,  2/2=1  remainder 0,
+
+        let isPowerOfTwo =function(n){
+            if(n<1){
+                return false;
+            }
+            while(n%2==0){
+                n=n/2  // big-O = O(log(n))
+                if(n==1){
+                    return true;
+                }
+            }
+            return false ;
+        }
+        
+
+        console.log('________________');
+        console.log(`1 ${isPowerOfTwo(1)}`);  // false
+        console.log(`2 ${isPowerOfTwo(2)}`);  // true
+        console.log(`3 ${isPowerOfTwo(3)}`);   // false
+        console.log(`4 ${isPowerOfTwo(4)}`);   // true
+        console.log(`5 ${isPowerOfTwo(5)}`);   // false
+        console.log(`10 ${isPowerOfTwo(10)}`);   // false
+        console.log(`12 ${isPowerOfTwo(12)}`);   // false
+        console.log(`16 ${isPowerOfTwo(16)}`);   // false
+       
+
+
+     
+        // 6- given number n(the index of fobinacci sequence) is integer number greater than 1 ,  it is Required to get the Fobinacci number
+        let recursiveFobinacci = function(n){
+            // base case 
+            if(n<2){
+                return n;       
+            }
+
+            // Recursive Case:
+            return  recursiveFobinacci(n-1) + recursiveFobinacci(n-2)   // find summation for last previous numbers until get 1  
+        }
+
+        // big-O(2^n)     watch the video to understand 2,4,8,16,32,..
+        //     For example, if you call recursiveFibonacci(4), the function evaluates as follows:
+
+        // recursiveFibonacci(4) returns recursiveFibonacci(3) + recursiveFibonacci(2)
+        // recursiveFibonacci(3) returns recursiveFibonacci(2) + recursiveFibonacci(1)
+        // recursiveFibonacci(2) returns recursiveFibonacci(1)=(1) + recursiveFibonacci(0)=(0)
+
+        console.log('________________');
+        // console.log(` fobicanacci(0) = ${recursiveFobinacci(0)}`);   //0
+        // console.log(` fobicanacci(1) = ${recursiveFobinacci(1)}`);   //1
+        // console.log(` fobicanacci(2) = ${recursiveFobinacci(2)}`);   //1   
+        // console.log(` fobicanacci(3) = ${recursiveFobinacci(3)}`);   //2
+        // console.log(` fobicanacci(4) = ${recursiveFobinacci(4)}`);   //3 
+        console.log(` fobicanacci(5) = ${recursiveFobinacci(5)}`);   //5 
+        console.log(` fobicanacci(6) = ${recursiveFobinacci(6)}`);   //8 
+
+
+
+
+
+        // 7- given number n, it is Required to get the  factorial number of n
+        let recursiveFactorial = function(n){
+            if(n<2){
+                return 1
+            }
+           return  n* recursiveFactorial(n-1)
+
+        }
+         // big-O(n)  
+    // recursiveFactorial(3), the function proceeds as follows:
+    // recursiveFactorial(3) returns 3 * recursiveFactorial(2)
+    // recursiveFactorial(2) returns 2 * recursiveFactorial(1)
+    // recursiveFactorial(1) reaches the base case and returns 1
+        console.log('________________');
+        console.log('factorial number');
+        console.log(`0! = ${factorial(0)}`) ;  // 1
+        console.log(`1! = ${factorial(1)}`) ;  // 1 
+        console.log(`2! = ${factorial(2)}`) ;  // 2
+
+        console.log(`3! = ${factorial(3)}`) ;   // 6 
+        console.log(`4! =${factorial(4)}`) ;     // 24
+        console.log(`5! =${factorial(5)}`) ;    // 120
+
+
+
+    // 15 - linear search 
+    //it is required to get index of target element t at arr if it exists ,else return -1 using linear search
+        let linearSearch = function(arr,target){
+            for (let i=0 ; i<arr.length ;i++){
+                if(arr[i]==target){
+                    return i;
+                }
+            }
+            return -1
+        }
+       // big-O =O(n)
+        console.log(linearSearch([5,0,10],10));
+        console.log(linearSearch([5,0,10],20));
+
+
+
+
+    // 16- binary Search    
+    //it is required to get index of target element t at arr if it exists ,else return -1 using binary search
+    let binarySearch = function (arr,target){
+        
+        let middleIndex=Math.floor(([arr.length-1])/2);
+        if(arr[middleIndex]==target){
+            return middleIndex;
+        }
+        
+        
+        if(target>arr[middleIndex]){
+            for(let i=middleIndex+1;i<arr.length;i++){
+                if(arr[i]==target){
+                    return i;
+                }
+            }
+        }
+
+        if(target<arr[middleIndex]){
+            for(let i=0;i<middleIndex-1;i++){
+                if(arr[i]==target){
+                    return i;
+                }
+            }
+        }
+     return -1;
+            
+    }
+    
+
+
+    console.log(binarySearch([0,5,7,10,20,30],10));
+    console.log(binarySearch([-5,0,7,10],10));
+    console.log(binarySearch([-5,0,7],10));
+    console.log(binarySearch([10,20,20,30,40,50],10));
+    // big-O = O(logn)        input size is reduced by half
+
+
+
+
+
+    // 21 - Bubble sort
+//     let bubbleSort=function(arr){
+//         let isSwaped=false;
+//         for(i=0; i< arr.length-1; i++){
+//             if(arr[i]>arr[i+1]){
+//                 let temp= arr[i];
+//                 arr[i]= arr[i+1];
+//                 arr[i+1]=temp;
+//                 isSwaped=true;
+//             }
+//         }
+//         if(isSwaped === true){
+//             bubbleSort(arr);
+//         }
+//         return arr;
+//     }
+//    console.log( bubbleSort([6,-20,5,10,3]));
+
+   // another solution
+
+
+     
+   let bubbleSort=function(arr){
+        let isSwaped;
+        do{
+            isSwaped=false;
+            for(i=0 ; i<arr.length-1 ; i++){
+                if(arr[i]>arr[i+1]){
+                    let temp= arr[i];
+                    arr[i]= arr[i+1];
+                    arr[i+1]=temp;
+                    isSwaped=true;
+                }
+            }
+        }
+        while(isSwaped);
+        return arr;
+    }
+   console.log( bubbleSort([6,-20,5,10,3]));
+ // big-O = O(n^2)
+
+    // 23-  insertion sort
+
+// psuedo code
+// i will divide arr into two arrays unsorted and unsortded 
+// i will insert the fisrt element of unsorted element into last element at sorted
+// i will compare that element at sorted array with it's previous element until that element is less than it's the previous element
+    
+    // let insertSort=function(arr){
+    //     let sortedElements = [arr[0]];
+    //     let unsortedElements = arr.slice(1);
+    //     for(let i=1; i<arr.length ;i++)  {
+
+    //         sortedElements.push(unsortedElements[0]);
+    //         unsortedElements.shift();
+          
+    //         let index= sortedElements.length - 1
+    //         while(index>0 && sortedElements[index-1] >sortedElements[index]){
+    //             let temp= sortedElements[index];
+    //             sortedElements[index]= sortedElements[index-1];
+    //             sortedElements[index-1]=temp;
+    //             index--;
+    //         }
+    //     }
+ 
+    //     return sortedElements;
+    // }
+    
+
+    // another solution
+    // i will get NumberToSort=arr[i]
+    
+
+    let insertSort=function(arr){
+        for(let i=1; i<arr.length ;i++)  {
+            let numberToSort=arr[i];
+            let index= i-1;
+            while(index>=0 && numberToSort < arr[index] ){
+                arr[index+1]=arr[index];
+                index--;
+            }
+           arr[index+1]=numberToSort;
+        }
+
+        return arr;
+    }
+    console.log(insertSort([-6,20,8,-2,4]));
+    // big-O = O(n^2)
+
+
+
+
+    // 26 َQuick sort
+    // input =[-6,20,8,-2,4] 
+    //process  sorted arr [...[-6leftArr,pivot-2],pivot4, ...[20leftArr,pivot 8]]>>> divide array then sort
+    // [ ...[-6] , ...[-2],4 ,...[8],...[20]]    >>>      [-6,-2,4,8,20]
+
+    let quickSort= function(arr) {
+        if(arr.length <2){   
+//arr.length ===1 is mistake because this does not handle empty arrays (arr.length === 0),
+// which could occur during recursion when dividing a small or sorted array.
+            return arr;
+        }
+        let pivot=arr[arr.length-1];
+        let leftArr= [];
+        let rightArr= [];
+        for(let i=0 ; i<arr.length-1 ; i++){
+            if(arr[i] < pivot){
+                leftArr.push(arr[i]);
+            }else (rightArr.push(arr[i]));
+        }
+        
+
+
+        return [...quickSort(leftArr),pivot,...quickSort(rightArr)];
+
+    }
+    console.log(quickSort([-6,20,8,-2,4]));
+
+
+
+    //   28 merge sort
+    // << input =[-6,20,8,-2,4]   
+    // >> divide arr into nested subarrays till reach to all nested subarrays.length < 2 
+    // >> [-6,20],[8,-2,4] >>> [[-6],[20]],[[8],[-2,4]] >> [[-6],[20]]  ,   [ [8],[[-2],[4]] ]
+    
+ 
+    let mergeSort = function(arr) {
+        if (arr.length <2 ){return arr;}
+        let mid= Math.floor(arr.length/2);
+        let leftArr = arr.slice(0,mid);
+        let rightArr = arr.slice(mid,arr.length);
+    // >> [-6,20],[8,-2,4] >>> [[-6],[20]],[[8],[-2,4]] >> [[-6],[20]] , [ [8],[[-2],[4]] ]
+        return merge(mergeSort(leftArr),mergeSort(rightArr)); 
+
+    }
+
+    let merge =function (leftArr,rightArr){   
+        let sortedArr =[];
+        while (leftArr.length &&  rightArr.length){//inserting leftArr ele and rightArr ele from smaller to bigger at sortedArr   
+            if(leftArr[0]<rightArr[0]){
+                sortedArr.push(leftArr.shift());
+            }else sortedArr.push(rightArr.shift());
+        }
+          
+        return[...sortedArr,...leftArr,...rightArr] // recursion function for merging all right and left arrays
+         // >> -6<20 [ ...[-6], [...[],...[20], ...[ [8],[[-2],[4]] ]] >>  [...[-6,20] ,  ...[8], ...[[-2],[4]] ]]
+         //  [...[-6,20] ,  ...[8], ...[ [-2],[4] ]    ] >> [...[-6,20] ,  ...[8], ...[-2,-4]  ]
+         //  [...[-6,20] ,  ...[8], ...[-2,4]  ]    >>  [ ...[-6,20] , ...[-2,4,8] ]
+         //  [...[-6,-2,4,8,20]] >> [-6,-2,4,8,20]
+    }
+    console.log(mergeSort([-6,20,8,-2,4]));
+
+    
+
+
+    // 30  cartesian  
+    let cartesian= function( arr1,arr2) {
+        let result = [];
+        for (let i=0; i<arr1.length ; i++) {
+            for (let j=0; j<arr2.length; j++){
+                let subArr= [];
+                result.push([arr1[i],arr2[j]]);
+            }
+        }
+        return result;
+    }
+    console.log(cartesian([1,2],[3,4,5]));
+
+
+
+    // 32 climbing stair case
+    let climbingStairCase= function(n){
+        if(n<2){
+            return 1;
+        }
+
+        return climbingStairCase(n-2)+climbingStairCase(n-1);
+    }
+
+    console.log(climbingStairCase(3));
+
+    let arr= [10,2,30]
+    console.log(arr.indexOf(10));
+     
+    </script>
+
+</body>
+</html>

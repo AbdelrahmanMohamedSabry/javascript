@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // let user1={
+        //     name:"osama",
+        //     "the age":38
+        // }
+        // let user2={
+        //     name:"abdo",
+        //     "the age":40
+        // }
+        // const propNames = Object.getOwnPropertyNames(user2);
+        // console.log(propNames)
+        // for (const name of propNames) {
+        //    console.log(propNames[name]);
+        // }
+
+        // user1=Object.freeze(user1);
+        // user3={name:"ali",age:66 , hobby:"reading"}
+        // let users= Object.assign(user2,user1,user3);
+        //  console.log(users);
+        //  console.log(user1)
+        //  console.log(user2)
+
+        // let obj1 =new Object (user2);
+        
+        // console.log(obj1)
+
+        // console.log(user1[`the age`]);
+
+        // console.log(Object.keys(user1));
+        // console.log(Object.values(user1));
+        // console.log(Object.entries(user1));
+
+
+        // let x=1;
+        // let y=1;
+        // console.log(x===y);
+
+        // let r=[1,1]
+        // console.log(r);
+        // let n=new Array (1,1)
+        // let l=new Array (1,1)
+        // console.log(n);
+        // console.log(n==l);
+       
+        // m=[1,2,3];
+        // v=[5,6,7];
+        // m=v
+        // m[0]=0
+        // console.log(m);
+        // console.log(v);
+        // const proto = { greet: () => console.log("Hello!") };
+        // const obj = Object.create(user1); // Explicitly setting the prototype
+        // obj.name = "Alice";
+        // console.log(obj);
+ 
+        // let t1=new Date (2005,1,1);
+        // let t2=new Date (2020,2,2);
+    
+        // t1=t2;
+        // t1.setFullYear(2030);
+
+        // // t1=new Date (2025,3,3)
+        // console.log(t1)
+        // console.log(t2)
+
+
+// let emp1= {name:"abdo"};        // case 2
+        // // let emp1=new String("abdo"); // case 1
+        // let emp1 ="abdo"               //case 3
+        // let arr=[];
+        // console.log(emp1)    //String {'abdo'}
+        // console.log(arr);   //[String] String {'abdo', name: 'amr', age: 30}     
+
+        // arr.push(emp1);       
+        // emp1.name="amr";    
+        // console.log(arr);   //[String]   String {'abdo', name: 'amr', age: 30}  
+        // console.log(emp1)    // String {'abdo', name: 'amr'}
+
+        // emp1.age=30;
+        // console.log(arr);   //[String] String {'abdo', name: 'amr', age: 30}     
+        // console.log(emp1)   //String {'abdo', name: 'amr', age: 30}
+
+
+
+        // let m="abdo";
+        // let n="abdo";
+        // console.log(m===n);
+
+
+
+        // let  x=['a','b','c'];  // we declare variable x which stored at stack memory which point to heap memory which initialize x with primitive value  =['a','b','c']
+        // let y=['a','b','c'];
+        // console.log(x===y)
+        // x=y             //  ….reference of x which stored at stack memory = reference of y  which stored at stack memory  which are point  to         referece to value   x= [x,y,z] ; y= [x,y,z];
+        // x[0]='y';  //.. That means we change property  not value    ...   choose the  results                             x=(['y','b','c'] ,  [ 'y','y','z'] )               y=(['y','b','c'] ,  [ 'y','y','z'] ) 
+        // //x[0]=y;   //    what are results of(x and y )                               x=(  ['y','b','c'] ,  (3) [Array(3), 'y', 'z'] )       y=(['y','b','c'] ,  (3) [Array(3), 'y', 'z'] )   WHERE Array(3)  is infinte Array chain 
+
+        // // x=1                   // that means we  reinitialize variable x with new reference  with value new 1 differ of y 
+        // console.log(x)           //1               console.log(y)  //  (3) ['y', 'y', 'z']  
+        // let myDate  =[1,1,1,2,3];  
+        // let iterator1= myDate.keys();
+        // console.log(iterator1.next()); //    
+        // console.log(iterator1.next().value); //    
+
+        // let myUniqueData=new Set(myDate);       // Set(3) {1,2,3}
+        // console.log(myUniqueData.clear()   );
+        // console.log(myUniqueData.clear()   )
+        // console.log(myUniqueData.add(2).add(3));
+        // console.log(myUniqueData)
+
+        // Create a WeakSet to track objects
+        // const weakSet = new WeakSet();
+
+        // function createTemporaryObject() {
+        //     // Create an object
+        //     const tempObj = { id: Math.random() };
+
+        //     // Add the object to the WeakSet
+        //     weakSet.add(tempObj);
+
+        //     console.log('Temporary object added to WeakSet:', tempObj);
+
+        //     // The function ends here. Since there are no other references
+        //     // to tempObj, it becomes eligible for garbage collection.
+        // }
+
+        // createTemporaryObject();
+
+        // // At this point, the object may have been garbage collected
+        // // because there are no other references to it.
+        // setTimeout(() => {
+        // console.log('Checking WeakSet after timeout:', weakSet); // WeakSet might be empty
+        // }, 1000);
+
+        // let myWeakSet=new WeakSet([{a:1}]); 
+        // let obj1={b:2}
+        // myWeakSet.add(obj1);
+        // console.log(myWeakSet);
+        // console.log(myWeakSet.size);
+        // myWeakSet.delete(obj1); 
+        // console.log(myWeakSet.has(obj1)); // false  
+        
+        
+
+
+
+
+   
+        
+
+    
+
+      
+
+
+
+//         class Stack {
+//             constructor() {
+//                 this.items = [];
+//                 // Check if the stack is empty
+//                 this.isEmpty=function() {
+//                     return this.items.length === 0;
+//                 }
+//             }
+
+//             // Add an element to the stack
+//             push(element) {this.items.push(element);}
+
+//             // Remove the top element from the stack
+//             pop() {
+//                 if (this.isEmpty()) {return "Underflow"; }
+//                 return this.items.pop();
+//             }
+
+//             // Peek at the top element without removing it
+//             peek() {
+//                 if (this.isEmpty()) {return "Stack is empty";}
+//                 return this.items[this.items.length - 1];
+//             }
+
+            
+
+//             // Get the size of the stack
+//             size() {return this.items.length;}
+
+//             // Clear the stack
+//             clear() {this.items = [];}
+//         }
+
+//         const myStack = new Stack();  //create new stack
+
+//         myStack.push(5);
+//         myStack.push(10);              // push elements at stack
+//         myStack.push(15);
+//         console.log(myStack.peek()); // Output: 
+
+//         console.log(myStack.pop());  
+//         console.log(myStack.pop());                                         // Pop an element
+//         console.log(myStack.pop());                                         // Pop an element
+//         console.log(myStack.pop());                                         // Pop an element
+
+
+//         console.log("Is the stack empty?", myStack.isEmpty());           // Check if the stack is empty
+//         let user = { greet() {console.log("Hello!");} };
+//         console.log(user)
+//         let obj = Object.create(user);
+//         console.log(obj);
+//         console.log(Object.getPrototypeOf(obj) === user);             // true
+//         console.log(obj.toString()); // From Object.prototype
+
+//         let obj5 = Object.create(null);
+//         console.log(obj5);
+      
+//         const newProto = { sayBye: () => console.log("Bye!") }; 
+//         Object.setPrototypeOf(obj, newProto);
+//         obj.sayBye(); // "Bye!"
+//         console.log(Object.getPrototypeOf(obj) === user);             // false
+//         console.log(obj);
+//         const obj2 = { name: "Alice" };
+
+// console.log(obj2.toString()); // From Object.prototype
+// console.log(obj2.hasOwnProperty("nam")); // From Object.prototype
+
+
+
+
+
+//     let map =new Map([['a',1], ['10',2]]); 
+//     console.log(map);
+//     // console.log(map.delete('10'));
+//     console.log(map.has("10"))
+
+//     map.has("10")
+//     let myWeakMap=new WeakMap()
+//     let arr=[12,34,68,77,43];
+//     console.log(arr);
+//     const str="abdo"
+//     console.log(str);
+
+
+        // let user1 ={name:'abdo'};
+        // let map =new Map();    
+        // let wMap=new WeakMap();
+        // console.log(wMap);    
+
+        // map.set(user1,'user1');
+        // wMap.set(user1,'user1');
+        // console.log(map);
+
+    
+        // user1.name='saya'
+        // console.log(map);
+        // console.log(wMap);
+
+        // user1=null
+        // console.log(map);
+        // console.log(wMap);   
+
+
+
+        // class Queue {
+        //         constructor() {    this.items = {}    }
+        //                 //items element is instance attribute not class attribute because every instance have different values of items
+                
+        //         enqueue(element) {        }
+
+        //         dequeue() {
+        //                 if (this.isEmpty()) { return 'Underflow - The stack is empty.' }
+        //                 return this.items.shift();
+        //         }
+
+        //         peek() { if (this.isEmpty()) { return "Stack is empty"; }    // mark that isEmpty () is hoisted here then excuted for that instnance
+        //                 return this.items[0]; 
+        //         }
+
+        //         isEmpty() {return this.items.length === 0}
+
+        //         size() {return this.items.length; }
+        
+
+        //                 clear() { this.items = []; }
+                
+        //         print() {console.log(this.items.toString()) ;    }
+
+        // }
+
+        // const queue = new Queue();  //create new Queue
+
+        // queue.enqueue(5);
+        // queue.enqueue(10);              // push elements at Queue
+        // queue.enqueue(15);
+        // queue.enqueue();                                        5,10,15
+
+        // console.log(queue.dequeue());                                         //5
+        // console.log(queue.dequeue());                                         // 10
+        // console.log(queue.dequeue());                                         // 15
+        // console.log(queue.dequeue());                                         // Underflow - The stack is empty.
+        // queue.print();                                                                 //
+
+        // console.log("Is the stack empty?", myStack.isEmpty());           //Is the stack empty?" true
+
+
+        // class Queue {
+        // constructor() {    this.items = {} ;  front=0 ;   this.rear=0;    }
+        //         //items element is instance attribute not class attribute because every instance have different values of items
+        
+        //         enqueue(element) {    this.items[this.rear]= element;    ++this.rear;     }
+
+        //         dequeue() {
+        //                 if (this.isEmpty()) { return 'Underflow - The Queue is empty.' }
+        //                 const deletedItem=this.peek(); 
+        //                 delete this.items[this.front];
+        //                 this.front++;
+        //                 return  deletedItem;
+        //         }
+
+        //         peek() { if (this.isEmpty()) { return "Queue is empty"; }    // mark that isEmpty () is hoisted here then excuted for that instnance
+        //                 return this.items[this.front]; 
+        //         }
+
+        //         isEmpty() {return this.front === this.rear }
+
+        //         size() {return this.rear-this.front; }
+
+
+        //         clear() { this.items ={} ;}
+                
+        //         print() {console.log(Object.values(this.items).toString()) ; }
+
+        // }
+
+        // const queue = new Queue();  //create new Queue
+
+        // queue.enqueue(5);
+        // queue.enqueue(10);              // push elements at Queue
+        // queue.enqueue(15);
+        // console.log(queue.dequeue());              //5
+        // console.log(queue.dequeue());              // 10
+        // console.log(queue.dequeue());              // 15
+        // console.log(queue.dequeue());              // Underflow - The Queue is empty.
+
+        // queue.print();                             //
+
+        // console.log("Is the stack empty?", queue.isEmpty());           //Is the stack empty?" true
+        // console.log(queue.size())                               //0
+
+        // console.log(queue.peek())                 //"Queue is empty"
+
+
+        // class Node{ constructor(value) {this.value=value ;  this.next=null }}
+
+        // class LinkedList{
+        //         constructor(){  this.head=null;       this.tail=null ;          this.size=0}
+                
+        //         prepend(value)  {
+        //                 let node= new Node(value); 
+        //                 if(this.isEmpty() ){this.head=node;          this.tail=node;         }       
+        //                 else{  node.next=this.head;   this.head=  node   }
+        //                 this.size++;
+        //         }
+
+        //         isEmpty(){return this.size===0}
+
+
+        //         print(){
+        //                 if (this.isEmpty()){console.log('linked list is empty')}      
+        //                 else{let curr=this.head;   let nodeVals=''; while(curr){  nodeVals+=` ${curr.value}`; curr=curr.next; } console.log(nodeVals)  } 
+        //         }
+                
+        //         append(value){
+        //                 let node =new Node(value);
+        //                 if(this.isEmpty()){this.head=node;          this.tail=node; }
+        //                 else{ this.tail.next=node;      this.tail=node;       }
+        //                 //else{let prev=this.head;  while(prev.next){prev=prev.next}    prev.next=node;    this.tail=node;             }
+        //                 this.size++;
+        //         }
+
+        //         insert(value,index){
+        //                 if(index<0||index>this.size){   return null  }
+        //                 if(index===0){ this.prepend(value)}
+        //                 else{
+        //                         let node =new Node(value);
+        //                         let prev=this.head; 
+        //                         for (let i=0 ; i<index-1;i++){ prev=prev.next}; 
+        //                         node.next=prev.next;
+        //                         prev.next=node;   
+        //                         if(index===this.size){this.tail=node;}
+        //                 } 
+        //                 this.size++;
+        //         }
+
+        //         removeNodeByIndex(index){
+        //                 if(index<0||index>this.size-1){  return null }
+        //                 let removedNode;
+        //                 if(index===0){removedNode=this.head;  this.head=this.head.next}
+        //                 else{let prev=this.head;  for (let i=0 ; i<index-1;i++){ prev=prev.next};removedNode=prev.next; prev.next=removedNode.next;          if(index===this.size-1){this.tail=prev;};    };
+        //                 this.size--;
+        //                 return removedNode.value;
+        //         }
+
+        //         removeNodeByValue(value){
+        //                 if(this.isEmpty() ){ return null}
+        //                 let removedNode;
+        //                 if( value=== this.head.value )   {removedNode = this.head;  this.head=this.head.next; return removedNode.value}
+        //                 else{let prev= this.head ;  while(prev.next&&prev.next.value!==value){prev=prev.next ;}
+        //                         if(prev.next){ removedNode=prev.next;prev.next=removedNode.next;   if(prev.next===this.tail){this.tail=prev;};
+        //                         this.size--; return removedNode.value; }   }
+        //                 return null;
+                        
+        //         }
+        //         removeFromFront(){
+        //                 if(this.isEmpty() ){ return null}
+        //                 let removedValue=this.head.value;
+        //                 // removedNode=this.head;
+        //                 this.head=this.head.next;
+        //                 // removedNode.next=null;       // we doesn't need that steps because when we need to prepend we will add new node before this.head
+        //                 this.size--;
+        //                 return removedValue ;  
+        //         }
+        //         removeFromEnd(){
+        //                 if(this.isEmpty() ){ return null}
+        //                 let removedValue=this.tail.value;
+        //                 if(this.size===1){this.head=null ; this.tail=null;}
+        //                 else{ let prev=this.head ; 
+        //                         while(prev.next !==this.tail) {
+        //                                 prev= prev.next} 
+        //                          prev.next=null;
+        //                           this.tail=prev }
+        //                 this.size--;
+        //                 return removedValue;  
+        //         }
+
+        //         search(value){
+        //                 if(this.isEmpty()){return -1}
+        //                 let  curr=this.head;   let index=0 ;     while(curr){ if(curr.value===value){return index;}  index++ }
+        //                 return -1;
+        //         }
+
+        //         reverse(){
+                
+        //                 let curr=this.head;     let prev      
+        //                 while(curr) { let next=curr.next ;              curr.next= prev;     prev=curr;       curr=next; }
+        //                 this.tail=this.head;                 this.head=prev
+        //         }
+
+        //         getSize(){return this.size;}
+        // }
+
+        // let list1=new LinkedList();
+        // list1.prepend(1);
+        // list1.append(3);
+        // list1.insert(2,1);
+        // list1.insert(4,3);
+
+        // console.log(list1.removeNodeByIndex(3));
+        // console.log(list1.removeNodeByValue(3));
+        // console.log(list1.removeFromFront());
+        // console.log(list1.removeFromEnd());
+        // console.log(list1.removeFromEnd());
+
+        // list1.print();
+
+
+        
+        //         class LinkedListStack {
+        //                 constructor() {   this.items = new LinkedList(); }   
+        //                         //items element is instance attribute not class attribute because every instance have different values of items
+                        
+        //                 push(value) {      this.items.prepend(value)     }
+
+        //                 pop() {
+        //                         if (this.isEmpty()) { return 'Underflow - The stack is empty.' }
+        //                         return this.items.removeFromFront();  // last in first out
+        //                 }
+
+        //                 peek() { if (this.isEmpty()) { return "Stack is empty"; }    // mark that isEmpty () is hoisted here then excuted for that instnance
+        //                 return this.items.head.value; 
+        //                 }
+
+        //                 size() {return this.items.getSize(); }
+                                        
+        //                 isEmpty() {return this.items.isEmpty()}
+        //                 print() { return this.items.print() ;    }
+
+        //         }
+
+        //         const myStack = new LinkedListStack ();  //create new stack
+
+        //         myStack.push(1);
+        //         myStack.push(2);              // push elements at stack
+        //         myStack.push(3);
+        //         myStack.print();                   //3,2,1
+        //         console.log(myStack.size()); //3
+        //         console.log(myStack.peek());  //3
+        //         console.log(myStack.pop());                                         // 3
+        //         console.log(myStack.pop());                                         // 2
+        //         console.log(myStack.pop());                                         // 1
+        //         console.log(myStack.pop());                                         // Underflow - The stack is empty.
+        //         myStack.print();                                                    // linked list is empty
+
+        //         console.log("Is the stack empty?", myStack.isEmpty());           //Is the stack empty?" true
+
+
+
+
+
+        //         class LinkedListQueue {
+        //                 constructor() {    this.items = new LinkedList ();    }
+        //                         //items element is instance attribute not class attribute because every instance have different values of items
+                        
+        //                 enqueue(value) {        this.items.append(value)    }
+
+        //                 dequeue() {
+        //                         if (this.isEmpty()) { return 'Underflow - The Queue is empty.' }
+        //                         return this.items.removeFromFront();
+        //                 }
+
+        //                 peek() { if (this.isEmpty()) { return "Queue is empty"; }    // mark that isEmpty () is hoisted here then excuted for that instnance
+        //                         return this.items.head.value; // 
+        //                 }
+
+        //                 isEmpty() {return this.items.isEmpty()}
+
+        //                 size() {return this.items.getSize(); }
+
+                        
+        //                 print() {this.items.print()  ;    }
+
+        //         }
+
+        //         const queue = new LinkedListQueue();  //create new Queue
+
+        //         queue.enqueue(5);
+        //         queue.enqueue(10);              // push elements at Queue
+        //         queue.enqueue(15);
+        //         queue.print();                                                                 //
+        //         console.log(queue.size()); //3
+        //         console.log(queue.peek());  //5
+        //         console.log(queue.dequeue());                                         //5
+        //         console.log(queue.dequeue());                                         // 10
+        //         console.log(queue.dequeue());                                         // 15
+        //         console.log(queue.dequeue());                                         // Underflow - The stack is empty.
+        //         queue.print();                                                                 //
+
+        //         console.log("Is the stack empty?", queue.isEmpty());           //Is the stack empty?" true
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
